@@ -104,7 +104,7 @@
           </a>
           <ul class="nav nav-treeview">
             <li class="nav-item">
-              <a href="{{ asset('producto') }}" class="nav-link">
+              <a href="{{route('vehiculo.index')}}" class="nav-link">
               <i class="far fa-dot-circle nav-icon"></i>
                 <p>Vehiculo</p>
               </a>
