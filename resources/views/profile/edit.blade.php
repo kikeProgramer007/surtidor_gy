@@ -1,4 +1,6 @@
 <x-app-layout>
+     <!-- Scripts -->
+     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- Content Header (Page header) -->
     <section class="content-header">
         <div class="container-fluid">

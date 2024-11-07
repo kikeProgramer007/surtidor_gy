@@ -24,8 +24,8 @@ Route::middleware('auth')->group(function () {
 Route::controller(ClienteController::class)->group(function (){
     Route::get('/cliente','index')->name('cliente.index');
     Route::get('/cliente/create/','create')->name('cliente.create');
-    Route::get('/cliente/store/','store')->name('cliente.store');
-    Route::get('/cliente/edit/{id}','edit')->name('cliente.edit');
+    Route::post('/cliente/store/','store')->name('cliente.store');
+    Route::get('/cliente/edit/{cliente}','edit')->name('cliente.edit');
     Route::post('/cliente/update/{cliente}','update')->name('cliente.update');
     Route::get('/cliente/destroy/{cliente}','destroy')->name('cliente.destroy');
 });

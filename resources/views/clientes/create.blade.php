@@ -35,7 +35,7 @@
                                         autofocus required />
                                     <div class="invalid-feedback">Introduzca nombre de Empleado.</div>
                                     @error('nombre')
-                                        <div class="alert alert-warning">
+                                        <div class="text-danger small">
                                             {{ $message }}
                                         </div>
                                     @enderror
@@ -45,11 +45,11 @@
                                 <div class="form-group">
                                     <label for="nombre">Apellidos</label>
                                     <input class="form-control" id="apellidos" name="apellidos" type="text"
-                                        value="{{ old('apellidos') }}"placeholder="ingrese sus apellidos "
-                                        pattern=".*\S+.*" autofocus required />
+                                        value="{{ old('apellidos') }}" placeholder="ingrese sus apellidos "
+                                        pattern=".*\S+.*"  required />
                                     <div class="invalid-feedback">Introduzca su apellido.</div>
                                     @error('apellidos')
-                                        <div class="alert alert-warning">
+                                        <div class="text-danger small">
                                             {{ $message }}
                                         </div>
                                     @enderror
@@ -57,36 +57,18 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="nombre">Edad</label>
-                                    <input class="form-control" id="edad" name="edad" type="number"
-                                        value="{{ old('edad') }}"placeholder="ingrese su edad " pattern=".*\S+.*"
+                                    <label for="nombre">Cedula de identidad</label>
+                                    <input class="form-control" id="ci" name="ci" type="number"
+                                        value="{{ old('ci') }}"placeholder="ingrese su ci " pattern=".*\S+.*"
                                         autofocus required />
-                                    <div class="invalid-feedback">Introduzca su edad.</div>
-                                    @error('edad')
-                                        <div class="alert alert-warning">
+                                    <div class="invalid-feedback">Introduzca su ci.</div>
+                                    @error('ci')
+                                        <div class="text-danger small">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
                             </div>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Email</label>
-                                    <input class="form-control" id="email" name="email" type="text"
-                                        pattern=".*\S+.*" placeholder="ingrese su nombre "value="{{ old('email') }}"
-                                        required />
-                                    <div class="invalid-feedback">Por favor, coloque su nombre.</div>
-                                    @error('email')
-                                        <div class="alert alert-warning">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="row">
 
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -96,26 +78,16 @@
                                         placeholder="ingrese su telefono "value="{{ old('telefono') }}" required />
                                     <div class="invalid-feedback">Por favor, coloque su nro de telefono.</div>
                                     @error('telefono')
-                                        <div class="alert alert-warning">
+                                        <div class="text-danger small">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                    <label>Sueldo</label>
-                                    <input class="form-control" id="sueldo" name="sueldo" type="number"
-                                        pattern=".*\S+.*" placeholder="ingrese su sueldo "value="{{ old('sueldo') }}"
-                                        required />
-                                    <div class="invalid-feedback">Por favor, coloque el sueldo.</div>
-                                    @error('sueldo')
-                                        <div class="alert alert-warning">
-                                            {{ $message }}
-                                        </div>
-                                    @enderror
-                                </div>
-                            </div>
+
+                        </div>
+                        <div class="row">
+
 
                             <div class="col-sm-6">
                                 <div class="form-group">
@@ -125,26 +97,19 @@
                                         placeholder="ingrese su direccion "value="{{ old('direccion') }}" required />
                                     <div class="invalid-feedback">Por favor, coloque su direccion.</div>
                                     @error('direccion')
-                                        <div class="alert alert-warning">
+                                        <div class="text-danger small">
                                             {{ $message }}
                                         </div>
                                     @enderror
                                 </div>
                             </div>
-
-                            <div class="col-sm-6">
-                                <div class="form-group">
-                                
-                                </div>
-                            </div>
-
                         </div>
 
                  
                         <div class="d-flex justify-content-end">
                             <div>
                                 <button type="submit" class= "btn btn-success btn-sm">Guardar</button>
-                                <a href="{{ route('cliente.index') }}" class= "btn btn-secondary btn-sm">Regresar</a>
+                                <a href="{{ route('cliente.index') }}" class= "btn btn-dark btn-sm">Regresar</a>
                             </div>
                         </div>
 

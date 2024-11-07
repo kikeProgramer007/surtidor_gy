@@ -38,8 +38,6 @@
     <!-- ChartJS -->
     <script src="{{ asset('/vendor/plugins/chart.js/Chart.min.js') }}"></script>
 
-    <!-- Scripts -->
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 {{-- <body class="font-sans antialiased"> --}}
@@ -105,7 +103,52 @@
         <!-- Tempusdominus Bootstrap 4 -->
         <script src="{{ asset('/vendor/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js') }}"></script>
 
-
+        <script>
+            /*========================= COMPLEMENTO DATATABLES ===========================*/
+            $(function () {
+                $('#example2').DataTable({
+                  "paging": true,
+                  "lengthChange": true,//view nro
+                  "searching": true,
+                  "ordering": true,
+                  "info": true,
+                  "autoWidth": false,
+                  "responsive": true,
+                  "deferRender": true,//
+                  "retrieve": true,
+                  "processing": true,//
+                  language: {
+                    "decimal": "",
+                    "emptyTable": "No hay información",
+                    "info": "Mostrando _START_ a _END_ de _TOTAL_ Entradas",
+                    "infoEmpty": "Mostrando 0 to 0 of 0 Entradas",
+                    "infoFiltered": "(Filtrado de _MAX_ total entradas)",
+                    "lengthMenu": "Mostrar _MENU_ entradas",
+                    "loadingRecords": "Cargando...",
+                    "processing": "Procesando...",
+                    "search": "Buscar:",
+                    "zeroRecords": "Sin resultados encontrados",
+                    "paginate": {
+                        "next": "Siguiente",
+                        "previous": "Anterior"
+                    }
+                  }
+                });
+              });
+            
+            
+            
+            
+            //tooltips
+            $(function () {
+              $('[data-toggle="tooltip"]').tooltip()
+            })
+            $(document).ready(function() {
+                $("table").tooltip({
+                    selector: '[rel="tooltip"]'
+                });
+            });
+            </script>
 </body>
 
 </html>

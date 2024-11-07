@@ -26,10 +26,10 @@
                 @csrf
                 <div class="card card-secondary card-outline">
                     <div class="card-body">
-                        <div class="d-flex justify-content-end">
-                            <div class="form-group">
-                                <a class="btn btn-info btn-sm" href="{{route('cliente.create')}}"><i
-                                        class="far fa-trash-alt"></i>&nbsp;Crear</a>
+                        <div class="d-flex justify-content-end ">
+                            <div class="mb-2">
+                                <a class="btn btn-dark btn-sm" href="{{ route('cliente.create') }}"><i
+                                        class="fas fa-plus"></i>&nbsp;&nbsp;Agregar</a>
                             </div>
                         </div>
 
@@ -56,8 +56,14 @@
                                         <td>{{ $item['telefono'] }}</td>
                                         <td class="py-1 align-middle text-center">
                                             <div class="btn-group btn-group-sm">
-                                                <a href="#" class="btn btn-warning" rel="tooltip"  data-placement="top" title="Eliminar" data-href="{{ asset('cliente/destroy') }}/{{ $item['id'] }}" data-toggle="modal" data-target="#modal-confirma"><i class="fas fa-edit"></i></a>
-                                                <a href="#" class="btn btn-danger" rel="tooltip" data-placement="top" title="Eliminar" data-href="{{ asset('cliente/destroy') }}/{{ $item['id'] }}" data-toggle="modal" data-target="#modal-confirma"><i class="fas fa-trash"></i></a>
+                                                <a href="{{ route('cliente.edit', $item->id) }}" class="btn btn-default"
+                                                    rel="tooltip" data-placement="top" title="Editar"><i
+                                                        class="fas fa-edit"></i></a>
+                                                <a href="#" class="btn btn-dark" rel="tooltip"
+                                                    data-placement="top" title="Eliminar"
+                                                    data-href="{{ route('cliente.destroy', $item->id) }}"
+                                                    data-toggle="modal" data-target="#modal-confirma"><i
+                                                        class="fas fa-trash"></i></a>
                                             </div>
                                         </td>
                                     </tr>
@@ -70,6 +76,31 @@
 
                 </div><!--/CARD FIN-->
             </form>
+
+
+            <!-- Modal -->
+            <div class="modal fade" id="modal-confirma" data-backdrop="static">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Eliminar Registro</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>¿Desea Eliminar este registro?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Cancelar</button>
+                            <a class="btn btn-dark btn-ok btn-sm">Confirmar</a>
+                        </div>
+                    </div>
+                    <!-- /.modal-content -->
+                </div>
+                <!-- /.modal-dialog -->
+            </div>
+            <!-- /.modal -->
 
         </div><!-- /.container-fluid -->
     </section><!-- /.content -->
