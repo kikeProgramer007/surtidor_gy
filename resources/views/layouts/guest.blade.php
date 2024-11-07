@@ -13,8 +13,21 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Google Font: Source Sans Pro -->
+        <link rel="stylesheet" href="{{ asset('vendor/dist/css/css.css') }}">
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="{{ asset('vendor/plugins/fontawesome-free/css/all.min.css') }}">
+        <!-- Theme style -->
+        <link rel="stylesheet" href="{{ asset('vendor/admin/css/adminlte.min.css') }}">
+
     </head>
+
+
+
+
     <body class="font-sans text-gray-900 antialiased">
+       
         <div class="min-h-screen flex flex-col sm:justify-center items-center pt-6 sm:pt-0 bg-gray-100">
             <div>
                 <a href="/">
@@ -26,5 +39,13 @@
                 {{ $slot }}
             </div>
         </div>
+
+        <!-- jQuery -->
+        <script src="{{ asset('vendor/plugins/jquery/jquery.min.js') }}"></script>
+        <!-- Bootstrap 4 -->
+        <script src="{{ asset('vendor/plugins/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+        <!-- AdminLTE App -->
+        <script src="{{ asset('vendor/dist/js/adminlte.min.js') }}"></script>
+        
     </body>
 </html>

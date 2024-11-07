@@ -1,0 +1,4 @@
+php artisan make:model Cliente -mcr
+php artisan make:seeder ProductoSeeder
+
+php artisan migrate:refresh --seed
