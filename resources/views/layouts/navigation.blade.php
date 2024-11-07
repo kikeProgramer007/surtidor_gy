@@ -74,10 +74,10 @@
   <!-- Brand Logo -->
   <a href="#" class="brand-link">
       {{-- <a href="{{url('/home')}}" class="brand-link"> --}}
-    <img src="{{asset('/vendor/images/user.png')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
-    <span class="brand-text font-weight-bold font-weight-light">Panaderia</span>
+    <img src="{{asset('/vendor/images/logo.jpg')}}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+    <span class="brand-text font-weight-bold font-weight-light">Surtidor</span>
   </a>
-
+  
   <!-- Sidebar -->
   <div class="sidebar">
     <!-- Sidebar user (optional) -->
@@ -96,9 +96,9 @@
         <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
         <li class="nav-item">
           <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-bread-slice"></i>
+            <i class="nav-icon fas fa-shipping-fast"></i>
             <p>
-              Productos
+              Vehiculo
               <i class="right fas fa-angle-left"></i>
             </p>
           </a>
@@ -106,20 +106,17 @@
             <li class="nav-item">
               <a href="{{ asset('producto') }}" class="nav-link">
               <i class="far fa-dot-circle nav-icon"></i>
-                <p>Panes</p>
+                <p>Vehiculo</p>
               </a>
             </li>
             <li class="nav-item">
               <a href="{{asset('categoria')}}" class="nav-link">
               <i class="far fa-dot-circle nav-icon"></i>
-                <p>Categorias</p>
+                <p>Tipo Vehiculo</p>
               </a>
             </li>
           </ul>
         </li>
-
-
-
 
 
         <li class="nav-item">
@@ -132,15 +129,7 @@
         </li>
 
 
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <i class="nav-icon fas fa-shipping-fast"></i>
-            <p>
-              Pedidos
-            </p>
-          </a>
-        </li>
-
+ 
         <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
@@ -191,7 +180,7 @@
             <li class="nav-item">
               <a href="#" class="nav-link">
                 <i class="far fa-dot-circle nav-icon"></i>
-                <p>Stock mínimos</p>
+                <p>Ganancias</p>
               </a>
             </li>
             <li class="nav-item">
