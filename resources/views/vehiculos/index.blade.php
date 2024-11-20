@@ -20,60 +20,56 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <form method="POST" enctype="multipart/form-data" action="" autocomplete="off"
-                class="needs-validation" novalidate>
-                @method('POST')
-                @csrf
-                <div class="card card-secondary card-outline">
-                    <div class="card-body">
-                        <div class="d-flex justify-content-end ">
-                            <div class="mb-2">
-                                <a class="btn btn-dark btn-sm" href="{{ route('vehiculo.create') }}"><i
-                                        class="fas fa-plus"></i>&nbsp;&nbsp;Agregar</a>
-                            </div>
+
+            <div class="card card-secondary card-outline">
+                <div class="card-body">
+                    <div class="d-flex justify-content-end ">
+                        <div class="mb-2">
+                            <a class="btn btn-dark btn-sm" href="{{ route('vehiculo.create') }}"><i
+                                    class="fas fa-plus"></i>&nbsp;&nbsp;Agregar</a>
                         </div>
+                    </div>
 
-                        <table id="example2" class="table table-bordered table-sm table-hover table-striped ">
-                            <thead>
+                    <table id="example2" class="table table-bordered table-sm table-hover table-striped ">
+                        <thead>
+                            <tr>
+                                <th> Id </th>
+                                <th> Placa </th>
+                                <th> Marca </th>
+                                <th> Modelo </th>
+                                <th> Color </th>
+                                <th> Tipo Vehiculo </th>
+                                <th> Cliente de Vehiculo </th>
+                                <th width="7px">Acción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach ($vehiculos as $item)
                                 <tr>
-                                    <th> Id </th>
-                                    <th> Placa </th>
-                                    <th> Marca </th>
-                                    <th> Modelo </th>
-                                    <th> Color </th>
-                                    <th width="7px">Acción</th>
+                                    <td>{{ $item->id }}</td>
+                                    <td>{{ $item->placa }}</td>
+                                    <td>{{ $item->marca }}</td>
+                                    <td>{{ $item->modelo }}</td>
+                                    <td>{{ $item->color }}</td>
+                                    <td>{{ $item->descripcion }}</td>
+                                    <td>{{ $item->nombre.' '.$item->apellidos }}</td>
+                                    <td class="py-1 align-middle text-center">
+                                        <div class="btn-group btn-group-sm">
+                                            <a href="{{ route('vehiculo.edit', $item->id) }}" class="btn btn-default" rel="tooltip" data-placement="top" title="Editar"><i class="fas fa-edit"></i></a>
+                                            <a href="#" class="btn btn-dark" rel="tooltip" data-placement="top" title="Eliminar" data-href="{{ route('vehiculo.destroy', $item->id) }}"
+                                                data-toggle="modal" data-target="#modal-confirma"><i
+                                                    class="fas fa-trash"></i></a>
+                                        </div>
+                                    </td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                @foreach ($vehiculos as $item)
-                                    <tr>
-                                        <td>{{ $item['id'] }}</td>
-                                        <td>{{ $item['placa'] }}</td>
-                                        <td>{{ $item['marca'] }}</td>
-                                        <td>{{ $item['modelo'] }}</td>
-                                        <td>{{ $item['color'] }}</td>
-                                        <td class="py-1 align-middle text-center">
-                                            <div class="btn-group btn-group-sm">
-                                                <a href="{{ route('vehiculo.edit', $item->id) }}" class="btn btn-default"
-                                                    rel="tooltip" data-placement="top" title="Editar"><i
-                                                        class="fas fa-edit"></i></a>
-                                                <a href="#" class="btn btn-dark" rel="tooltip"
-                                                    data-placement="top" title="Eliminar"
-                                                    data-href="{{ route('vehiculo.destroy', $item->id) }}"
-                                                    data-toggle="modal" data-target="#modal-confirma"><i
-                                                        class="fas fa-trash"></i></a>
-                                            </div>
-                                        </td>
-                                    </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                            @endforeach
+                        </tbody>
+                    </table>
 
 
-                    </div><!--/body card-->
+                </div><!--/body card-->
 
-                </div><!--/CARD FIN-->
-            </form>
+            </div><!--/CARD FIN-->
 
 
             <!-- Modal -->

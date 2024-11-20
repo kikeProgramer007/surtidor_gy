@@ -1,5 +1,4 @@
 
-
 <x-app-layout>
     <section class="content-header">
       <div class="container-fluid">
@@ -98,12 +97,28 @@
                                     @enderror
                                 </div>
                             </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="id_cliente">Seleccione el Cliente</label>
+                                    <select class="form-control"  id="id_cliente" name="id_cliente" required>
+                                        <option selected disabled value="">Seleccionar Cliente</option>
+                                        @foreach ($clientes as $item)
+                                            <option value="{{$item->id}}" @if ($item->id == $vehiculo->id_cliente){{'selected'}}@endif>{{$item->nombre.' '.$item->apellidos}}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="invalid-feedback">Seleccione el cliente.</div>
+                                    @error('id_cliente')
+                                    <small class="text-danger"> {{$message}}</small>
+                                    @enderror
+                                </div>
+                            </div>
                         </div>
 
                  
                         <div class="d-flex justify-content-end">
                             <div>
-                                <button type="submit" class= "btn btn-success btn-sm">Guardar</button>
+                                <button type="submit" class= "btn btn-success btn-sm">Actualizar</button>
                                 <a href="{{ route('vehiculo.index') }}" class= "btn btn-dark btn-sm">Regresar</a>
                             </div>
                         </div>

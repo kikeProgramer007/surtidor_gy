@@ -98,7 +98,7 @@
 
                           <div class="d-flex justify-content-end">
                               <div>
-                                <button type="submit" class= "btn btn-success btn-sm">Guardar</button> 
+                                <button type="submit" class= "btn btn-success btn-sm">Actualizar</button> 
                                 <a href="{{route('cliente.index')}}" class= "btn btn-secondary btn-sm">Regresar</a>  
                               </div>
                           </div>

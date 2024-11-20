@@ -15,6 +15,7 @@ class Vehiculo extends Model
         'color',
         'estado',
         'id_tipo_vehiculo',
+        'id_cliente',
     ];
     public $timestamps=false;
 }

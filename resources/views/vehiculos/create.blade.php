@@ -21,8 +21,8 @@
     <!-- Main content -->
     <section class="content">
         <div class="container-fluid">
-            <form method="POST" action="{{ route('vehiculo.store') }}" autocomplete="off"
-                class="needs-validation" novalidate>
+            <form method="POST" action="{{ route('vehiculo.store') }}" autocomplete="off" class="needs-validation" novalidate>
+
                 @csrf
                 <div class="card card-secondary card-outline">
                     <div class="card-body">
@@ -83,36 +83,49 @@
                         </div>
                         <div class="row">
 
-
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                <label for="id_tipo_vehiculo">Tipo Vehiculo</label>
-                                  <select class="form-control"  id="id_tipo_vehiculo" name="id_tipo_vehiculo"  required>
-                                  <option selected disabled value="">Seleccionar Tipo Vehiculo</option>
-                                      @foreach ($tipo_vehiculos as $item)
-                                      <option value="{{$item->id}}">{{$item->descripcion}}</option>
-                                      @endforeach
-                                  </select>
-                                  <div class="invalid-feedback">Seleccione el Tipo Vehiculo.</div>
-                                  @error('id_tipo_vehiculo')
-                                  <small class="text-danger"> {{$message}}</small>
-                                  @enderror
+                                    <label for="id_tipo_vehiculo">Tipo Vehiculo</label>
+                                    <select class="form-control" id="id_tipo_vehiculo" name="id_tipo_vehiculo" required>
+                                        <option selected disabled value="">Seleccionar Tipo Vehiculo</option>
+                                        @foreach ($tipo_vehiculos as $item)
+                                            <option value="{{ $item->id }}">{{ $item->descripcion }}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="invalid-feedback">Seleccione el Tipo Vehiculo.</div>
+                                    @error('id_tipo_vehiculo')
+                                        <small class="text-danger"> {{ $message }}</small>
+                                    @enderror
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="form-group">
+                                    <label for="id_cliente">Cliente</label>
+                                    <select class="form-control" id="id_cliente" name="id_cliente" required>
+                                        <option selected disabled value="">Seleccionar Cliente</option>
+                                        @foreach ($clientes as $item)
+                                            <option value="{{ $item->id }}">{{ $item->nombre.' '.$item->apellidos}}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="invalid-feedback">Seleccione el Cliente.</div>
+                                    @error('id_cliente')
+                                        <small class="text-danger"> {{ $message }}</small>
+                                    @enderror
                                 </div>
                             </div>
                         </div>
-
-                 
                         <div class="d-flex justify-content-end">
                             <div>
                                 <button type="submit" class= "btn btn-success btn-sm">Guardar</button>
                                 <a href="{{ route('vehiculo.index') }}" class= "btn btn-dark btn-sm">Regresar</a>
                             </div>
                         </div>
+              
+                </div><!--/body card-->
 
-                    </div><!--/body card-->
+            </div><!--/CARD FIN-->
+        </form>
 
-                </div><!--/CARD FIN-->
-            </form>
         </div><!-- /.container-fluid -->
     </section><!-- /.content -->
 
