@@ -128,30 +128,56 @@
         </li>
 
         <li class="nav-item">
-          <a href="{{route('almacen.index')}}" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
+          <a href="#" class="nav-link">&nbsp;
+            <i class="fas fa-gas-pump"></i>
             <p>
-              Almacenes
+            &nbsp;Carga de Combustible
+              <i class="right fas fa-angle-left"></i>
+            </p>
+          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+              <a href="{{route('dispensador.index')}}" class="nav-link">
+              <i class="far fa-dot-circle nav-icon"></i>
+                <p>Dispensadores</p>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="{{route('combustible.index')}}" class="nav-link">
+              <i class="far fa-dot-circle nav-icon"></i>
+                <p>Combustible</p>
+              </a>
+            </li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a href="{{route('almacen.index')}}" class="nav-link">&nbsp;
+          <i class="fas fa-warehouse"></i>
+            <p>
+            &nbsp;Almacenes
             </p>
           </a>
         </li>
 
         <li class="nav-item">
-          <a href="{{route('combustible.index')}}" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
+          <a href="#" class="nav-link">&nbsp;
+            <i class="fas fa-clipboard-check"></i>
             <p>
-              Combustibles
+            &nbsp;Venta
+              <i class="right fas fa-angle-left"></i>
             </p>
           </a>
-        </li>
-
-        <li class="nav-item">
-          <a href="{{route('dispensador.index')}}" class="nav-link">
-            <i class="nav-icon fas fa-users"></i>
-            <p>
-              Dispensadores
-            </p>
-          </a>
+          <ul class="nav nav-treeview">
+            <li class="nav-item">
+                <a href="{{route('nota.index')}}" class="nav-link">
+                <i class="far fa-dot-circle nav-icon"></i>
+                <p>
+                  Nota de Venta
+                </p>
+              </a>
+            </li>
+          </ul>
         </li>
 
         <li class="nav-item">

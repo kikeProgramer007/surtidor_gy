@@ -8,6 +8,7 @@ use App\Http\Controllers\AlmacenController;
 use App\Http\Controllers\CombustibleController;
 use App\Http\Controllers\DispensadorController;
 use App\Http\Controllers\DetalleCombustibleController;
+use App\Http\Controllers\NotaVentaController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -89,6 +90,16 @@ Route::middleware('auth')->group(function () {
         Route::put('/detalle_combustible/update/{detalle_combustible}', 'update')->name('detalle_combustible.update');
         Route::delete('/detalle_combustible/destroy/{detalle_combustible}', 'destroy')->name('detalle_combustible.destroy');
     });
+
+    Route::controller(NotaVentaController::class)->group(function () {
+        Route::get('/nota', 'index')->name('nota.index');
+        Route::get('/nota/create', 'create')->name('nota.create');
+        Route::post('/nota', 'store')->name('nota.store');
+        Route::get('/nota/{nota}/edit', 'edit')->name('nota.edit');
+        Route::put('/nota/{nota}', 'update')->name('nota.update');
+        Route::delete('/nota/{nota}', 'destroy')->name('nota.destroy');
+    });
+    
 });
 
 

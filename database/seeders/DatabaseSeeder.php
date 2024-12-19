@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\User;
+use App\Models\TipoPago;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
@@ -23,6 +24,13 @@ class DatabaseSeeder extends Seeder
             'name' => 'Enrique',
             'email' => 'user@gmail.com',
             'password' => 'prueba',
+        ]);
+        TipoPago::factory()->create([
+            'tipo' => 'Efectivo',
+        ]);
+
+        TipoPago::factory()->create([
+            'tipo' => 'QR',
         ]);
     }
 }
