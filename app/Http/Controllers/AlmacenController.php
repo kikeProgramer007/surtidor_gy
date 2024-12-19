@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Almacen;
+use App\Models\DetalleCombustible;
 use Illuminate\Http\Request;
 
 class AlmacenController extends Controller
@@ -62,5 +63,14 @@ class AlmacenController extends Controller
     {
         $almacen->delete();
         return back();
+    }
+
+    public function show(Almacen $almacen)
+    {
+        $detalle_combustibles = DetalleCombustible::with('combustible')
+            ->where('id_almacen', $almacen->id)
+            ->get();
+
+        return view('almacenes.show', compact('almacen', 'detalle_combustibles'));
     }
 }

@@ -18,11 +18,11 @@ class Dispensador extends Model
     // Relaciones
     public function almacen()
     {
-        return $this->belongsTo(Almacen::class, 'id_almacen', 'id_almacen');
+        return $this->belongsTo(Almacen::class, 'id_almacen', 'id');
     }
 
     public function combustible()
     {
-        return $this->belongsTo(Combustible::class, 'id_combustible', 'id_combustible');
+        return $this->belongsTo(Combustible::class, 'id_combustible', 'id');
     }
 }

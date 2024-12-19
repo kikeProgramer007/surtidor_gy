@@ -6,6 +6,8 @@ use App\Http\Controllers\TipoVehiculoController;
 use App\Http\Controllers\VehiculoController;
 use App\Http\Controllers\AlmacenController;
 use App\Http\Controllers\CombustibleController;
+use App\Http\Controllers\DispensadorController;
+use App\Http\Controllers\DetalleCombustibleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -57,6 +59,8 @@ Route::middleware('auth')->group(function () {
         Route::get('/almacen/edit/{almacen}', 'edit')->name('almacen.edit');
         Route::post('/almacen/update/{almacen}', 'update')->name('almacen.update');
         Route::get('/almacen/destroy/{almacen}', 'destroy')->name('almacen.destroy');
+
+        Route::get('/almacen/show/{almacen}', 'show')->name('almacen.show');
     });
 
     Route::controller(CombustibleController::class)->group(function () {
@@ -68,7 +72,23 @@ Route::middleware('auth')->group(function () {
         Route::delete('/combustible/destroy/{combustible}', 'destroy')->name('combustible.destroy');
     });
 
+    Route::controller(DispensadorController::class)->group(function () {
+        Route::get('/dispensador', 'index')->name('dispensador.index');
+        Route::get('/dispensador/create', 'create')->name('dispensador.create');
+        Route::post('/dispensador/store', 'store')->name('dispensador.store');
+        Route::get('/dispensador/edit/{dispensador}', 'edit')->name('dispensador.edit');
+        Route::put('/dispensador/update/{dispensador}', 'update')->name('dispensador.update');
+        Route::delete('/dispensador/destroy/{dispensador}', 'destroy')->name('dispensador.destroy');
+    });
     
+    Route::controller(DetalleCombustibleController::class)->group(function () {
+        Route::get('/detalle_combustible', 'index')->name('detalle_combustible.index');
+        Route::get('/detalle_combustible/create', 'create')->name('detalle_combustible.create');
+        Route::post('/detalle_combustible/store', 'store')->name('detalle_combustible.store');
+        Route::get('/detalle_combustible/edit/{detalle_combustible}', 'edit')->name('detalle_combustible.edit');
+        Route::put('/detalle_combustible/update/{detalle_combustible}', 'update')->name('detalle_combustible.update');
+        Route::delete('/detalle_combustible/destroy/{detalle_combustible}', 'destroy')->name('detalle_combustible.destroy');
+    });
 });
 
 

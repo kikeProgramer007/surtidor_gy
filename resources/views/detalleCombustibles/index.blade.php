@@ -5,16 +5,16 @@
         <div class="container-fluid">
             <div class="row mb-0">
                 <div class="col-sm-6 mb-0">
-                    <h1>Almacenes</h1>
+                    <h1>Detalle Combustibles</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <li class="breadcrumb-item"><a href="#">Inicio</a></li>
-                        <li class="breadcrumb-item active">Almacenes</li>
+                        <li class="breadcrumb-item"><a href="inicio">Inicio</a></li>
+                        <li class="breadcrumb-item active">Detalle Combustibles</li>
                     </ol>
                 </div>
             </div>
-        </div><!-- /.container-fluid -->
+        </div>
     </section>
 
     <!-- Main content -->
@@ -28,40 +28,36 @@
                     <div class="card-body">
                         <div class="d-flex justify-content-end ">
                             <div class="mb-2">
-                                <a class="btn btn-dark btn-sm" href="{{ route('almacen.create') }}"><i
+                                <a class="btn btn-dark btn-sm" href="{{ route('detalle_combustible.create') }}"><i
                                         class="fas fa-plus"></i>&nbsp;&nbsp;Agregar</a>
                             </div>
                         </div>
 
-                        <table id="example2" class="table table-bordered table-sm table-hover table-striped ">
+                        <table id="example2" class="table table-bordered table-sm table-hover table-striped">
                             <thead>
                                 <tr>
-                                    <th> Id </th>
-                                    <th> Nombre </th>
-                                    <th> Capacidad Total </th>
-                                    <th> Capacidad Actual </th>
+                                    <th>Id</th>
+                                    <th>Almacén</th>
+                                    <th>Combustible</th>
+                                    <th>Cantidad</th>
                                     <th width="7px">Acción</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                @foreach ($almacenes as $item)
+                                @foreach ($detalle_combustibles as $detalle)
                                     <tr>
-                                        <td>{{ $item['id'] }}</td>
-                                        <td>{{ $item['nombre'] }}</td>
-                                        <td>{{ $item['capacidad_total'] }}</td>
-                                        <td>{{ $item['capacidad_actual'] }}</td>
+                                        <td>{{ $detalle->id }}</td>
+                                        <td>{{ $detalle->almacen->nombre }}</td>
+                                        <td>{{ $detalle->combustible->nombre }}</td>
+                                        <td>{{ $detalle->cantidad }}</td>
                                         <td class="py-1 align-middle text-center">
                                             <div class="btn-group btn-group-sm">
-                                                <a href="{{ route('almacen.show', $item->id) }}" class="btn btn-info"
-                                                    rel="tooltip" data-placement="top" title="Ver">
-                                                    <i class="fas fa-eye"></i>
-                                                </a>
-                                                <a href="{{ route('almacen.edit', $item->id) }}" class="btn btn-default"
-                                                    rel="tooltip" data-placement="top" title="Editar"><i
-                                                        class="fas fa-edit"></i></a>
-                                                <a href="#" class="btn btn-dark" rel="tooltip"
-                                                    data-placement="top" title="Eliminar"
-                                                    data-href="{{ route('almacen.destroy', $item->id) }}"
+                                                <a href="{{ route('detalle_combustible.edit', $detalle->id) }}"
+                                                    class="btn btn-default" rel="tooltip" data-placement="top"
+                                                    title="Editar"><i class="fas fa-edit"></i></a>
+                                                <a href="#" class="btn btn-dark" rel="tooltip" data-placement="top"
+                                                    title="Eliminar"
+                                                    data-href="{{ route('detalle_combustible.destroy', $detalle->id) }}"
                                                     data-toggle="modal" data-target="#modal-confirma"><i
                                                         class="fas fa-trash"></i></a>
                                             </div>
@@ -70,13 +66,9 @@
                                 @endforeach
                             </tbody>
                         </table>
-
-
-                    </div><!--/body card-->
-
-                </div><!--/CARD FIN-->
+                    </div>
+                </div>
             </form>
-
 
             <!-- Modal -->
             <div class="modal fade" id="modal-confirma" data-backdrop="static">
@@ -96,13 +88,10 @@
                             <a class="btn btn-dark btn-ok btn-sm">Confirmar</a>
                         </div>
                     </div>
-                    <!-- /.modal-content -->
                 </div>
-                <!-- /.modal-dialog -->
             </div>
-            <!-- /.modal -->
 
-        </div><!-- /.container-fluid -->
-    </section><!-- /.content -->
+        </div>
+    </section>
 
 </x-app-layout>

@@ -146,6 +146,15 @@
         </li>
 
         <li class="nav-item">
+          <a href="{{route('dispensador.index')}}" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Dispensadores
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
             <p>
