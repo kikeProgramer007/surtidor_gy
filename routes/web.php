@@ -4,6 +4,8 @@ use App\Http\Controllers\ClienteController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TipoVehiculoController;
 use App\Http\Controllers\VehiculoController;
+use App\Http\Controllers\AlmacenController;
+use App\Http\Controllers\CombustibleController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -46,6 +48,26 @@ Route::middleware('auth')->group(function () {
         Route::post('/vehiculo/update/{vehiculo}','update')->name('vehiculo.update');
         Route::get('/vehiculo/destroy/{vehiculo}','destroy')->name('vehiculo.destroy');
     });
+
+    // Rutas para Almacen
+    Route::controller(AlmacenController::class)->group(function () {
+        Route::get('/almacen', 'index')->name('almacen.index');
+        Route::get('/almacen/create', 'create')->name('almacen.create');
+        Route::post('/almacen/store', 'store')->name('almacen.store');
+        Route::get('/almacen/edit/{almacen}', 'edit')->name('almacen.edit');
+        Route::post('/almacen/update/{almacen}', 'update')->name('almacen.update');
+        Route::get('/almacen/destroy/{almacen}', 'destroy')->name('almacen.destroy');
+    });
+
+    Route::controller(CombustibleController::class)->group(function () {
+        Route::get('/combustible', 'index')->name('combustible.index');
+        Route::get('/combustible/create', 'create')->name('combustible.create');
+        Route::post('/combustible/store', 'store')->name('combustible.store');
+        Route::get('/combustible/edit/{combustible}', 'edit')->name('combustible.edit');
+        Route::post('/combustible/update/{combustible}', 'update')->name('combustible.update');
+        Route::delete('/combustible/destroy/{combustible}', 'destroy')->name('combustible.destroy');
+    });
+
     
 });
 

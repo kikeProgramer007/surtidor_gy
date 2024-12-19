@@ -128,6 +128,24 @@
         </li>
 
         <li class="nav-item">
+          <a href="{{route('almacen.index')}}" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Almacenes
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
+          <a href="{{route('combustible.index')}}" class="nav-link">
+            <i class="nav-icon fas fa-users"></i>
+            <p>
+              Combustibles
+            </p>
+          </a>
+        </li>
+
+        <li class="nav-item">
           <a href="#" class="nav-link">
             <i class="nav-icon fas fa-edit"></i>
             <p>
